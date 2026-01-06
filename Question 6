@@ -1,0 +1,109 @@
+6. Write C programs to simulate the following memory management techniques a) Paging b) 
+Segmentation
+
+
+🧠 Memory Management Techniques
+a) Paging
+📌 Concept
+
+Logical address = Page Number + Offset
+
+Physical address = Frame Number + Offset
+
+Page table maps page → frame
+
+✅ C Program: Paging Simulation
+#include <stdio.h>
+
+int main() {
+    int page_table[10];
+    int n, page_size;
+    int page_no, offset, frame_no, phys_addr;
+
+    printf("Enter number of pages: ");
+    scanf("%d", &n);
+
+    printf("Enter page size: ");
+    scanf("%d", &page_size);
+
+    printf("Enter page table (page -> frame):\n");
+    for (int i = 0; i < n; i++)
+        scanf("%d", &page_table[i]);
+
+    printf("Enter page number and offset: ");
+    scanf("%d %d", &page_no, &offset);
+
+    if (page_no >= n || offset >= page_size) {
+        printf("Invalid logical address\n");
+        return 0;
+    }
+
+    frame_no = page_table[page_no];
+    phys_addr = frame_no * page_size + offset;
+
+    printf("Physical Address = %d\n", phys_addr);
+
+    return 0;
+}
+
+b) Segmentation
+📌 Concept
+
+Logical address = Segment Number + Offset
+
+Each segment has base address and limit
+
+Physical address = Base + Offset
+
+✅ C Program: Segmentation Simulation
+#include <stdio.h>
+
+int main() {
+    int n;
+    int base[10], limit[10];
+    int seg_no, offset, phys_addr;
+
+    printf("Enter number of segments: ");
+    scanf("%d", &n);
+
+    printf("Enter base and limit for each segment:\n");
+    for (int i = 0; i < n; i++)
+        scanf("%d %d", &base[i], &limit[i]);
+
+    printf("Enter segment number and offset: ");
+    scanf("%d %d", &seg_no, &offset);
+
+    if (seg_no >= n || offset >= limit[seg_no]) {
+        printf("Invalid logical address\n");
+        return 0;
+    }
+
+    phys_addr = base[seg_no] + offset;
+
+    printf("Physical Address = %d\n", phys_addr);
+
+    return 0;
+}
+
+🔹 Sample Output (Paging)
+Enter number of pages: 3
+Enter page size: 100
+Enter page table:
+5 9 1
+Enter page number and offset: 1 20
+Physical Address = 920
+
+🔹 Sample Output (Segmentation)
+Enter number of segments: 2
+Enter base and limit:
+1000 400
+2000 300
+Enter segment number and offset: 0 200
+Physical Address = 1200
+
+🧠 Viva Comparison
+Feature	Paging	Segmentation
+Unit	Page	Segment
+Size	Fixed	Variable
+Address	Page + Offset	Segment + Offset
+Fragmentation	Internal	External
