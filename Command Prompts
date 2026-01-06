@@ -1,0 +1,140 @@
+🖥️ ESSENTIAL TERMINAL COMMANDS FOR CSE STUDENTS (LINUX)
+🔹 1. BASIC FILE & DIRECTORY COMMANDS (MOST IMPORTANT)
+Command	Purpose
+pwd	Show present working directory
+ls	List files and directories
+ls -l	Long listing with permissions
+ls -a	Show hidden files
+cd dirname	Change directory
+cd ..	Move to parent directory
+cd ~	Go to home directory
+mkdir dir	Create directory
+rmdir dir	Delete empty directory
+rm file	Delete file
+rm -r dir	Delete directory recursively
+cp src dest	Copy file
+cp -r dir1 dir2	Copy directory
+mv old new	Rename / move file
+🔹 2. FILE VIEWING & EDITING COMMANDS
+Command	Purpose
+cat file.c	Display file contents
+cat > file.txt	Create file using terminal
+less file.txt	View file page by page
+more file.txt	View file (older)
+head file.txt	First 10 lines
+tail file.txt	Last 10 lines
+nano file.c	Simple editor
+vi file.c	Advanced editor
+vim file.c	Improved vi editor
+🔹 3. COMPILATION & PROGRAM EXECUTION (VERY IMPORTANT FOR LAB)
+C Programs
+gcc program.c
+./a.out
+
+gcc program.c -o prog
+./prog
+
+C++ Programs
+g++ program.cpp
+./a.out
+
+Java Programs
+javac Program.java
+java Program
+
+Python Programs
+python3 program.py
+
+🔹 4. FILE PERMISSIONS & OWNERSHIP (OS LAB VIVA FAVORITE)
+Command	Purpose
+chmod 777 file	Give all permissions
+chmod 644 file	rw-r--r--
+chmod +x file.sh	Make file executable
+ls -l	View permissions
+chown user file	Change owner
+chgrp group file	Change group
+🔹 5. PROCESS MANAGEMENT COMMANDS
+Command	Purpose
+ps	Show running processes
+ps -ef	Detailed process list
+top	Real-time process monitor
+htop	Advanced process viewer
+kill pid	Kill a process
+kill -9 pid	Force kill
+bg	Resume process in background
+fg	Bring to foreground
+🔹 6. SYSTEM INFORMATION COMMANDS
+Command	Purpose
+uname	System name
+uname -a	Full system info
+whoami	Current user
+who	Logged-in users
+date	Current date & time
+cal	Calendar
+df -h	Disk space
+free -h	Memory usage
+uptime	System running time
+🔹 7. SEARCHING & FILTERING (IMPORTANT FOR DATA PROCESSING)
+Command	Purpose
+grep word file	Search word in file
+grep -i word file	Case-insensitive
+find . -name file	Search file
+wc file	Word/line count
+wc -l file	Line count
+sort file	Sort file
+uniq file	Remove duplicates
+🔹 8. REDIRECTION & PIPES (OS LAB CORE TOPIC)
+Command	Purpose
+>	Output redirection
+>>	Append output
+<	Input redirection
+`	`
+Example:
+ls > files.txt
+cat file.txt | grep hello
+
+🔹 9. NETWORKING COMMANDS (CSE + CN USEFUL)
+Command	Purpose
+ping google.com	Check connectivity
+ifconfig	Network info
+ip a	IP address
+netstat	Network stats
+ssh user@ip	Remote login
+scp file user@ip:/path	File transfer
+🔹 10. ARCHIVE & COMPRESSION COMMANDS
+Command	Purpose
+tar -cvf file.tar dir	Create archive
+tar -xvf file.tar	Extract archive
+zip file.zip file	Compress
+unzip file.zip	Extract zip
+gzip file	Compress
+gunzip file.gz	Decompress
+🔹 11. PACKAGE MANAGEMENT (VERY USEFUL)
+Command	Purpose
+sudo apt update	Update package list
+sudo apt install gcc	Install package
+sudo apt remove pkg	Remove package
+sudo apt upgrade	Upgrade system
+🔹 12. IPC & OS LAB RELATED COMMANDS
+Command	Purpose
+ipcs	View IPC resources
+ipcrm	Remove IPC resource
+strace ./a.out	Trace system calls
+ltrace ./a.out	Trace library calls
+🔹 13. SHELL & SHORTCUT COMMANDS (PRODUCTIVITY)
+Shortcut	Purpose
+Ctrl + C	Stop process
+Ctrl + Z	Suspend process
+Ctrl + L	Clear screen
+clear	Clear terminal
+history	Command history
+!!	Run last command
+exit	Exit terminal
+🔥 MOST IMPORTANT COMMANDS FOR EXAMS & LAB
+
+✔ ls, cd, pwd
+✔ gcc, ./a.out
+✔ chmod, ps, kill
+✔ grep, pipe (|)
+✔ ipcs, ipcrm
+✔ strace
